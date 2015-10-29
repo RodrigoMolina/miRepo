@@ -1,0 +1,12 @@
+<!------------------------------------------------------ 
+Debe mostrarse la información del primer monstruo sin
+usar el id.
+Se debe mostrar el nombre (como título) y la descripción 
+(como párrafo).
+------------------------------------------------------>
+
+
+
+<% m = Monstruo.find(1) %>
+<h1 style="color:purple"> <%= m.nombre %> </h1>
+<p >  <%=m.descripcion %> </p>

@@ -1,0 +1,26 @@
+<!------------------------------------------------------ 
+Acá va a ir el listado de tweets
+------------------------------------------------------>
+
+<h1 >Tweets</h1>
+<table class="table">
+  <tr>
+
+    <th style="color:blue"> Estado </th>
+ 
+    <th style="color:blue"> Nombre </th>
+    <th style="color:blue"> Pelicula Favorita (Link) </th>
+  </tr>
+  <% Tweet.order("created_at desc").each do |tweet| %>
+    <tr >
+
+       <% if tweet.monstruo.nombre == "Drácula" %>
+           <td class="danger "> <%=tweet.estado %></td>
+       <% else %>
+         <td ><esteOtro> <%= tweet.estado %></esteOtro> </td >   
+       <% end %>
+      <td > <%= tweet.monstruo.nombre %> </td>
+      <td><a href="<%= tweet.monstruo.pelicula_url%>" > <%= tweet.monstruo.pelicula_favorita %> </a></td>
+  </tr>
+  <% end %>
+</table>
